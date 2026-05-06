@@ -2481,7 +2481,7 @@ body {
 /* --- QR Code Widget (sec-0 cover) --- */
 #qr-widget {
   position: absolute;
-  bottom: 28px;
+  top: 28px;
   right: 32px;
   display: flex;
   flex-direction: column;

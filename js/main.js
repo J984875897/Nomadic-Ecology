@@ -103,7 +103,7 @@ document.addEventListener('keydown', function (e) {
 goTo(0);
 
 // ---- QR Code (sec-0 cover) ----
-QRCode.toCanvas(document.getElementById('qr-canvas'), window.location.href, {
+QRCode.toCanvas(document.getElementById('qr-canvas'), 'https://j984875897.github.io/Nomadic-Ecology/', {
   width: 96, margin: 1,
   color: { dark: '#1A1A2E', light: '#FFFFFF' }
 });

@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find '/Volumes/T7 Shield/Ai编程/CC-test' -name *.js)"
+    ]
+  }
+}

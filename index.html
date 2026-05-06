@@ -1,0 +1,1786 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nomadic Ecology — Foldscape Habitat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+
+  <!-- ======================== NAVIGATION ======================== -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <div class="nav-logo" onclick="goTo(0)">NE</div>
+      <div class="nav-chapters">
+        <button class="nav-btn" data-sec="0" onclick="goTo(0)">
+          <span class="nav-icon">&#x2B21;</span>
+          <span class="nav-label">Cover</span>
+        </button>
+        <button class="nav-btn" data-sec="1" onclick="goTo(1)">
+          <span class="nav-icon">&#x25C8;</span>
+          <span class="nav-label">Background</span>
+        </button>
+        <button class="nav-btn" data-sec="2" onclick="goTo(2)">
+          <span class="nav-icon">&#x25C7;</span>
+          <span class="nav-label">Theory</span>
+        </button>
+        <button class="nav-btn" data-sec="3" onclick="goTo(3)">
+          <span class="nav-icon">&#x25B3;</span>
+          <span class="nav-label">Geometry</span>
+        </button>
+        <button class="nav-btn" data-sec="4" onclick="goTo(4)">
+          <span class="nav-icon">&#x2B21;</span>
+          <span class="nav-label">Connections</span>
+        </button>
+        <button class="nav-btn" data-sec="5" onclick="goTo(5)">
+          <span class="nav-icon">&#x229E;</span>
+          <span class="nav-label">Spatial</span>
+        </button>
+        <button class="nav-btn" data-sec="6" onclick="goTo(6)">
+          <span class="nav-icon">&#x25CE;</span>
+          <span class="nav-label">Site</span>
+        </button>
+        <button class="nav-btn" data-sec="7" onclick="goTo(7)">
+          <span class="nav-icon">&#x25A3;</span>
+          <span class="nav-label">Design</span>
+        </button>
+        <button class="nav-btn" data-sec="8" onclick="goTo(8)">
+          <span class="nav-icon">&#x2605;</span>
+          <span class="nav-label">Conclusion</span>
+        </button>
+      </div>
+      <div class="nav-keys-hint">&#8592; &#8594; to navigate</div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ======================== SECTION 0: COVER ======================== -->
+    <section id="sec-0" class="section">
+      <div class="cover-container">
+
+        <div class="cover-hero">
+          <!-- Cover Image -->
+          <div class="cover-svg-wrap">
+            <img class="cover-img" src="Picture/section0/封面01.png" alt="Nomadic Ecology — Cover">
+          </div>
+
+          <!-- Cover Text -->
+          <div class="cover-text">
+            <div class="cover-subtitle-top">MASTER THESIS &middot; ARCHITECTURE &middot; 2026</div>
+            <h1 class="cover-title">
+              <span class="title-en">Nomadic Ecology</span>
+            </h1>
+            <p class="cover-desc">Foldscape Habitat Prototype for Weak Ecological Regions</p>
+            <div class="cover-divider"></div>
+            <div class="cover-meta">
+              <div class="meta-item">
+                <span class="meta-label">Designer</span>
+                <span class="meta-value">Junjian Liang</span>
+              </div>
+              <div class="meta-dot"></div>
+              <div class="meta-item">
+                <span class="meta-label">Institution</span>
+                <span class="meta-value">Chalmers University of Technology</span>
+              </div>
+              <div class="meta-dot"></div>
+              <div class="meta-item">
+                <span class="meta-label">Year</span>
+                <span class="meta-value">2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter Navigation Grid -->
+        <div class="cover-nav-section">
+          <div class="cover-nav-label">— CHAPTERS —</div>
+          <div class="cover-nav-grid">
+            <div class="cover-nav-card" onclick="goTo(1)">
+              <div class="card-num">01</div>
+              <div class="card-name">Background</div>
+              <div class="card-hint">&amp; Problem</div>
+            </div>
+            <div class="cover-nav-card" onclick="goTo(2)">
+              <div class="card-num">02</div>
+              <div class="card-name">Theory</div>
+              <div class="card-hint">&amp; References</div>
+            </div>
+            <div class="cover-nav-card" onclick="goTo(3)">
+              <div class="card-num">03</div>
+              <div class="card-name">Geometry</div>
+              <div class="card-hint">Exploration</div>
+            </div>
+            <div class="cover-nav-card" onclick="goTo(4)">
+              <div class="card-num">04</div>
+              <div class="card-name">Connections</div>
+              <div class="card-hint">&amp; Combinations</div>
+            </div>
+            <div class="cover-nav-card" onclick="goTo(5)">
+              <div class="card-num">05</div>
+              <div class="card-name">Spatial</div>
+              <div class="card-hint">Strategy</div>
+            </div>
+            <div class="cover-nav-card" onclick="goTo(6)">
+              <div class="card-num">06</div>
+              <div class="card-name">Site</div>
+              <div class="card-hint">Analysis</div>
+            </div>
+            <div class="cover-nav-card" onclick="goTo(7)">
+              <div class="card-num">07</div>
+              <div class="card-name">Design</div>
+              <div class="card-hint">Proposal</div>
+            </div>
+            <div class="cover-nav-card" onclick="goTo(8)">
+              <div class="card-num">08</div>
+              <div class="card-name">Conclusion</div>
+              <div class="card-hint">&amp; Innovation</div>
+            </div>
+          </div>
+        </div>
+
+        <div id="qr-widget">
+          <canvas id="qr-canvas"></canvas>
+          <p class="qr-label">Scan to open</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================== SECTION 1: BACKGROUND ======================== -->
+    <section id="sec-1" class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="sec-num">01</div>
+          <div class="sec-title-wrap">
+            <h2>Background &amp; Problem Statement</h2>
+            <p class="sec-subtitle">The ecological and humanitarian urgency</p>
+          </div>
+        </div>
+
+        <!-- Key Stats -->
+        <div class="stats-row">
+          <div class="stat-card">
+            <div class="stat-value accent">+1.55°C</div>
+            <div class="stat-label">Global avg. temperature rise, 2024</div>
+            <div class="stat-sub">First breach of the Paris Agreement 1.5°C threshold</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value primary">4.7 mm/yr</div>
+            <div class="stat-label">Annual sea level rise rate</div>
+            <div class="stat-sub">124% increase compared to 1993–2002</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value primary">72</div>
+            <div class="stat-label">Active Chinese Plateau research stations</div>
+            <div class="stat-sub">Operated by 30 nations; ~4,500 researchers deployed each austral summer</div>
+          </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts-row">
+          <div class="chart-card">
+            <div class="chart-title">Global Temperature Anomaly</div>
+            <div class="chart-sub">°C vs. 1850–1900 pre-industrial baseline</div>
+            <div class="chart-wrap">
+              <canvas id="chart-temp"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">Sea Level Rise Acceleration</div>
+            <div class="chart-sub">Mean rate (mm/yr) by decade</div>
+            <div class="chart-wrap">
+              <canvas id="chart-sea"></canvas>
+            </div>
+          </div>
+          <div class="chart-card">
+            <div class="chart-title">Chinese Plateau Station Population</div>
+            <div class="chart-sub">Summer vs. winter headcount — 8 major stations</div>
+            <div class="chart-wrap">
+              <canvas id="chart-station"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Problem Analysis -->
+        <div class="problem-block">
+          <h3 class="block-title">Core Contradiction</h3>
+          <div class="problem-grid">
+            <div class="problem-card pressure">
+              <div class="problem-icon-row">
+                <div class="problem-icon-box accent-border">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#E85A1A" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                </div>
+                <h4>Climate Pressure</h4>
+              </div>
+              <p>Fragile ecological zones — polar, alpine, and desert — face unprecedented climate stress while simultaneously experiencing a surge in scientific and exploratory activity.</p>
+            </div>
+            <div class="problem-card impact">
+              <div class="problem-icon-row">
+                <div class="problem-icon-box warn-border">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C88A00" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </div>
+                <h4>Construction Conflict</h4>
+              </div>
+              <p>Permanent buildings leave irreversible carbon footprints and ecological disturbance in sensitive zones, while existing temporary shelters fail to support long-term research operations.</p>
+            </div>
+            <div class="problem-card sdg">
+              <div class="problem-icon-row">
+                <div class="problem-icon-box primary-border">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1B3669" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <h4>Sustainability Goals</h4>
+              </div>
+              <div class="sdg-badges">
+                <span class="sdg-badge sdg11">SDG 11<br><small>Sustainable Cities</small></span>
+                <span class="sdg-badge sdg13">SDG 13<br><small>Climate Action</small></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Research Question -->
+        <div class="research-question">
+          <div class="rq-label">RESEARCH QUESTION</div>
+          <blockquote class="rq-text">
+            How can a foldable modular architectural system support the rapid deployment of adaptable and low-impact community-scale habitats in fragile environments?
+          </blockquote>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================== SECTION 2: THEORY ======================== -->
+    <section id="sec-2" class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="sec-num">02</div>
+          <div class="sec-title-wrap">
+            <h2>Theoretical Framework &amp; Reference Projects</h2>
+            <p class="sec-subtitle">Conceptual foundations and precedent studies</p>
+          </div>
+        </div>
+
+        <!-- Tab Bar -->
+        <div class="tab-bar">
+          <button class="tab-btn active" id="tab2-theory" onclick="switchTab(2,'theory')">
+            <span class="tab-icon">&#x25C7;</span> Theoretical Framework
+          </button>
+          <button class="tab-btn" id="tab2-refs" onclick="switchTab(2,'refs')">
+            <span class="tab-icon">&#x25A1;</span> Reference Projects
+          </button>
+        </div>
+
+        <!-- Theory Content -->
+        <div id="sec2-theory" class="tab-content active">
+          <div class="theory-grid">
+
+            <div class="theory-card">
+              <div class="theory-num">T1</div>
+              <div class="theory-icon primary-text">&#x2B21;</div>
+              <h4>Zero-Trace Architecture</h4>
+              <p class="theory-en">Minimal Ecological Footprint</p>
+              <p class="theory-body">All materials and structures can be fully removed after use, restoring the site to its original state without leaving permanent marks. This is the core ethical constraint of the design.</p>
+              <div class="theory-tag tag-core">Core Principle</div>
+            </div>
+
+            <div class="theory-card">
+              <div class="theory-num">T2</div>
+              <div class="theory-icon primary-text">&#x25C7;</div>
+              <h4>Light-Touch Intervention</h4>
+              <p class="theory-en">Point-Contact Foundation Strategy</p>
+              <p class="theory-body">Avoids excavation and conventional foundations through point-contact support systems, minimising thermal and mechanical disturbance to permafrost and surface ecosystems.</p>
+              <div class="theory-tag tag-strategy">Strategy</div>
+            </div>
+
+            <div class="theory-card">
+              <div class="theory-num">T3</div>
+              <div class="theory-icon accent-text">&#x25C8;</div>
+              <h4>Nomadic Ecology</h4>
+              <p class="theory-en">Seasonal Migration Logic</p>
+              <p class="theory-body">Drawing from nomadic civilisations that follow seasonal rhythms, the design establishes a dynamic occupancy model: deploy when needed, withdraw when done — architecture as a transient guest, not a permanent resident.</p>
+              <div class="theory-tag tag-concept">Design Concept</div>
+            </div>
+
+            <div class="theory-card">
+              <div class="theory-num">T4</div>
+              <div class="theory-icon primary-text">&#x25B3;</div>
+              <h4>Rigid-Foldable Mechanism</h4>
+              <p class="theory-en">Miura-ori Geometry</p>
+              <p class="theory-body">Based on Miura-ori and related rigid-foldable geometries, panels deform minimally while joints follow precise kinematic paths. Folding ratio λ = 3.2 — the packed volume is 1/3.2 of the deployed state.</p>
+              <div class="theory-tag tag-tech">Technical Core</div>
+              
+            </div>
+
+            <div class="theory-card">
+              <div class="theory-num">T5</div>
+              <div class="theory-icon primary-text">&#x25CE;</div>
+              <h4>ETFE Membrane System</h4>
+              <p class="theory-en">Ethylene Tetrafluoroethylene Film</p>
+              <p class="theory-body">ETFE film offers exceptional performance in extreme environments: 90%+ light transmission, 1/100th the weight of glass, foldable and packable, operating range from −60°C to +150°C.</p>
+              <div class="theory-tag tag-material">Material</div>
+            </div>
+
+            <div class="theory-card">
+              <div class="theory-num">T6</div>
+              <div class="theory-icon accent-text">&#x2605;</div>
+              <h4>BIPV Integration</h4>
+              <p class="theory-en">Building-Integrated Photovoltaics</p>
+              <p class="theory-body">Thin-film PV cells integrated into the foldable envelope harvest energy during polar summer's extended daylight, achieving self-sufficiency for scientific equipment and life-support systems.</p>
+              <div class="theory-tag tag-energy">Energy Strategy</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- References Content -->
+        <div id="sec2-refs" class="tab-content">
+          <div class="refs-grid">
+
+            <div class="ref-card">
+              <div class="ref-img-wrap">
+                <img src="./Picture/section2/lunark.jpg" alt="LUNARK — SAGA Space Architects, 2020" class="ref-img">
+              </div>
+              <div class="ref-info">
+                <h4>LUNARK</h4>
+                <div class="ref-tags">
+                  <span class="ref-tag">Polar deployment</span>
+                  <span class="ref-tag">Foldable structure</span>
+                  <span class="ref-tag">Energy self-sufficiency</span>
+                </div>
+                <p class="ref-body">A foldable lunar/polar habitat prototype by SAGA Space Architects. Successfully deployed and inhabited for 57 days in Greenland (2020), demonstrating the viability and habitability of foldable architecture in extreme conditions.</p>
+                <div class="ref-lesson">
+                  <span class="lesson-label">Takeaway</span>
+                  Real-world extreme-environment validation + fold/deploy workflow reference
+                </div>
+              </div>
+            </div>
+
+            <div class="ref-card">
+              <div class="ref-img-wrap">
+                <img src="./Picture/section2/walking house.jpg" alt="Walking House — N55 + H. S. Larsen, 2008" class="ref-img">
+              </div>
+              <div class="ref-info">
+                <h4>Walking House</h4>
+                <div class="ref-tags">
+                  <span class="ref-tag">Nomadic dwelling</span>
+                  <span class="ref-tag">Self-sustaining</span>
+                  <span class="ref-tag">Slow mobility</span>
+                </div>
+                <p class="ref-body">A self-propelled ecological dwelling unit by N55 + Henrik Svarrer Larsen, equipped with solar, wind, and composting systems. Able to traverse diverse terrain at low speed — a direct architectural expression of nomadic ecological philosophy.</p>
+                <div class="ref-lesson">
+                  <span class="lesson-label">Takeaway</span>
+                  Nomadic strategy embodied in architecture + closed-loop energy logic
+                </div>
+              </div>
+            </div>
+
+            <div class="ref-card">
+              <div class="ref-img-wrap">
+                <img src="./Picture/section2/bee hotel.jpg" alt="B&amp;Bee Hotel — Netherlands, 2014" class="ref-img">
+              </div>
+              <div class="ref-info">
+                <h4>B&amp;Bee Hotel</h4>
+                <div class="ref-tags">
+                  <span class="ref-tag">Modular units</span>
+                  <span class="ref-tag">Hexagonal geometry</span>
+                  <span class="ref-tag">Stackable</span>
+                </div>
+                <p class="ref-body">A honeycomb-inspired modular accommodation system from the Netherlands. Hexagonal units stack in multiple orientations to produce varied spatial configurations — demonstrating the combinatorial richness and scalability of geometric unit systems.</p>
+                <div class="ref-lesson">
+                  <span class="lesson-label">Takeaway</span>
+                  Modular combination logic + spatial potential of hexagonal geometry
+                </div>
+              </div>
+            </div>
+
+            <div class="ref-card">
+              <div class="ref-img-wrap">
+                <img src="./Picture/section2/foldable house.jpg" alt="Folly / Foldable House" class="ref-img">
+              </div>
+              <div class="ref-info">
+                <h4>Folly / Foldable House</h4>
+                <div class="ref-tags">
+                  <span class="ref-tag">Fold &amp; deploy</span>
+                  <span class="ref-tag">Compact storage</span>
+                  <span class="ref-tag">Rapid setup</span>
+                </div>
+                <p class="ref-body">Lightweight foldable residential units emphasising efficient transition from transport state to habitable state — studying the practical application of fold geometry at dwelling scale, its structural challenges, and spatial quality outcomes.</p>
+                <div class="ref-lesson">
+                  <span class="lesson-label">Takeaway</span>
+                  Fold geometry applied to habitation + deployment efficiency research
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================== SECTION 3: GEOMETRY ======================== -->
+    <section id="sec-3" class="section">
+      <div class="section-inner">
+
+        <div class="section-header">
+          <div class="sec-num">03</div>
+          <div class="sec-title-wrap">
+            <h2>Geometric &amp; Prototype Exploration</h2>
+            <p class="sec-subtitle">Basic crease learning · Physical prototypes · Kinematic mechanism</p>
+          </div>
+        </div>
+
+        <!-- Tab Bar -->
+        <div class="tab-bar">
+          <button class="tab-btn active" id="tab3-crease" onclick="switchTab(3,'crease')">
+            <span class="tab-icon">&#x25C7;</span> Crease Types
+          </button>
+          <button class="tab-btn" id="tab3-proto" onclick="switchTab(3,'proto')">
+            <span class="tab-icon">&#x25A1;</span> Prototype Models
+          </button>
+          <button class="tab-btn" id="tab3-mech" onclick="switchTab(3,'mech')">
+            <span class="tab-icon">&#x25B3;</span> Mechanism Analysis
+          </button>
+        </div>
+
+        <!-- ===== TAB 1: Crease Types ===== -->
+        <div class="tab-content active" id="sec3-crease">
+          <div class="crease-grid">
+
+            <div class="crease-card">
+              <div class="crease-img-wrap">
+                <img src="./Picture/section3/折痕展开图_画板 1-01.png" alt="Miura Fold" class="crease-img">
+              </div>
+              <div class="crease-info">
+                <h4>Miura Fold</h4>
+                <p>Alternating mountain-valley pleats on continuous rhombus units. <strong>Single-DOF</strong> system — geometric continuity keeps panels smooth while minimising weight and maximising structural stability.</p>
+              </div>
+            </div>
+
+            <div class="crease-card">
+              <div class="crease-img-wrap">
+                <img src="./Picture/section3/折痕展开图_画板 1-02.png" alt="Triangulated Pleat Fold" class="crease-img">
+              </div>
+              <div class="crease-info">
+                <h4>Triangulated Pleat Fold</h4>
+                <p>Regular zigzag crease pattern with a single-direction linear folding path. High stiffness along the crease axis — well-suited for rapidly deployable wall panels and lightweight roof elements.</p>
+              </div>
+            </div>
+
+            <div class="crease-card">
+              <div class="crease-img-wrap">
+                <img src="./Picture/section3/折痕展开图_画板 1-03.png" alt="Oblique Zigzag Fold" class="crease-img">
+              </div>
+              <div class="crease-info">
+                <h4>Oblique Zigzag Fold</h4>
+                <p>Diagonal crease pattern whose angle variation generates continuous curved or wave-form geometries. High morphological adaptability — applicable to responsive structural skins.</p>
+              </div>
+            </div>
+
+            <div class="crease-card">
+              <div class="crease-img-wrap">
+                <img src="./Picture/section3/折痕展开图_画板 1-04.png" alt="Diamond Fold" class="crease-img">
+              </div>
+              <div class="crease-info">
+                <h4>Diamond Fold</h4>
+                <p>Mirror-symmetric folding of upper and lower units. Balanced folding path with strong reversibility — maintains high flatness at full deployment, ideal for repeatedly deployable roof systems.</p>
+              </div>
+            </div>
+
+            <div class="crease-card">
+              <div class="crease-img-wrap">
+                <img src="./Picture/section3/折痕展开图_画板 1-05.png" alt="Square Diagonal Fold" class="crease-img">
+              </div>
+              <div class="crease-info">
+                <h4>Square Diagonal Fold</h4>
+                <p>Yoshimura pattern — intersecting diagonal creases on a square grid. Multi-directional folding capacity combined with high structural rigidity, widely used in deployable shell design.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ===== TAB 2: Prototype Models ===== -->
+        <div class="tab-content" id="sec3-proto">
+          <p class="proto-intro">Physical paper models — from basic pleats to complex hexagonal assemblies, exploring the geometry of deployable form.</p>
+          <div class="proto-grid">
+
+            <div class="proto-card">
+              <div class="proto-img-wrap">
+                <img src="./Picture/section3/IMG_6034.jpg" alt="Basic V-pleats" class="proto-img">
+              </div>
+              <div class="proto-label"><span class="proto-tag">01</span><span class="proto-name">Basic V-pleats</span></div>
+              <p class="proto-desc">Linear array of primary V-pleats forming a continuous rhythmic surface. Uni-directional deployment — applicable to rollable skin systems.</p>
+            </div>
+
+            <div class="proto-card">
+              <div class="proto-img-wrap">
+                <img src="./Picture/section3/IMG_6036.jpg" alt="Reflected" class="proto-img">
+              </div>
+              <div class="proto-label"><span class="proto-tag">02</span><span class="proto-name">Reflected</span></div>
+              <p class="proto-desc">Symmetric folding with counter-rotation enables bi-directional spatial movement. Shell-like curved surface with high compression ratio in the folded state.</p>
+            </div>
+
+            <div class="proto-card">
+              <div class="proto-img-wrap">
+                <img src="./Picture/section3/IMG_6037.jpg" alt="Box+Fold Motifs" class="proto-img">
+              </div>
+              <div class="proto-label"><span class="proto-tag">03</span><span class="proto-name">Box+Fold Motifs</span></div>
+              <p class="proto-desc">Integrates box-fold and face-fold logic. Intersecting creases create a two-layer stable support structure balancing rigidity and flexibility.</p>
+            </div>
+
+            <div class="proto-card">
+              <div class="proto-img-wrap">
+                <img src="./Picture/section3/IMG_6038.jpg" alt="Hexagon+Folded Motifs 1" class="proto-img">
+              </div>
+              <div class="proto-label"><span class="proto-tag">04</span><span class="proto-name">Hexagon+Folded Motifs 1</span></div>
+              <p class="proto-desc">Hexagonal base units interlocked and stacked vertically. Balanced cross-section throughout folding — fully compressible.</p>
+            </div>
+
+            <div class="proto-card">
+              <div class="proto-img-wrap">
+                <img src="./Picture/section3/IMG_6040.jpg" alt="Box Spirals 1" class="proto-img">
+              </div>
+              <div class="proto-label"><span class="proto-tag">05</span><span class="proto-name">Box Spirals 1</span></div>
+              <p class="proto-desc">Square-base torsional folding generates a subtly rotating volumetric transformation, combining regularity with asymmetry.</p>
+            </div>
+
+            <div class="proto-card">
+              <div class="proto-img-wrap">
+                <img src="./Picture/section3/IMG_6041.jpg" alt="Box Spirals 2" class="proto-img">
+              </div>
+              <div class="proto-label"><span class="proto-tag">06</span><span class="proto-name">Box Spirals 2</span></div>
+              <p class="proto-desc">Introduces volumetric contraction and angular variation to enhance vertical dynamism. Rising centre of mass reflects form–force dual coupling.</p>
+            </div>
+
+            <div class="proto-card">
+              <div class="proto-img-wrap">
+                <img src="./Picture/section3/IMG_6044.jpg" alt="Hexagon+Miura-ori" class="proto-img">
+              </div>
+              <div class="proto-label"><span class="proto-tag">07</span><span class="proto-name">Hexagon+Miura-ori</span></div>
+              <p class="proto-desc">Hexagonal layout integrated with Miura-ori logic. Multi-directional folding system with a continuous smooth motion path — deployable into a tubular structure.</p>
+            </div>
+
+            <div class="proto-card">
+              <div class="proto-img-wrap">
+                <img src="./Picture/section3/IMG_6054.jpg" alt="Hexagon+Folded Motifs 2" class="proto-img">
+              </div>
+              <div class="proto-label"><span class="proto-tag">08</span><span class="proto-name">Hexagon+Folded Motifs 2</span></div>
+              <p class="proto-desc">Internal diagonal creases build multi-layered spatial relationships. Highly compact in the folded state — expands into a stable spatial boundary.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ===== TAB 3: Mechanism Analysis ===== -->
+        <div class="tab-content" id="sec3-mech">
+
+          <!-- ── Row 1: Triangulated Folding Concept → text ── -->
+          <div class="concept-reveal">
+            <div class="concept-inner" id="ci-1">
+              <div class="concept-img-side" onclick="revealConcept('ci-1')">
+                <img src="./Picture/section3/三角折叠概念讲述.png" alt="Triangulated Folding Concept" class="concept-img">
+                <span class="concept-hint">Click to explore →</span>
+              </div>
+              <div class="concept-txt-side">
+                <div class="mech-section-label">Triangulated Folding Concept</div>
+                <h4 class="mech-title">Rigid-Foldable Mechanism</h4>
+                <p class="mech-body">The basic folding unit belongs to the <strong>rigid-foldable mechanism</strong> category — deformation is driven by hinge rotation and every panel remains rigid throughout the folding process with no elastic material strain.</p>
+                <p class="mech-body">The unit comprises two symmetric rigid triangular links on each side and a central drive hinge, exhibiting <strong>1-DOF</strong> kinematics: only one control parameter (fold angle β) is required for continuous deployment.</p>
+                <p class="mech-body">Geometric relationship: <strong>γ = 180° − 2β</strong>, where γ is the included angle at the drive hinge. At β = 0° the structure is fully folded; at β = 40° it reaches full deployment.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="concept-divider"></div>
+
+          <!-- ── Row 2: Connection Diagram 1 → interactive SVG ── -->
+          <div class="concept-reveal">
+            <div class="concept-inner" id="ci-2">
+              <div class="concept-img-side" onclick="revealConcept('ci-2')">
+                <img src="./Picture/section3/展开连接图1.png" alt="Deployment and Connection Diagram 1" class="concept-img">
+                <span class="concept-hint">Click for interactive demo →</span>
+              </div>
+              <div class="concept-txt-side concept-txt-svg">
+                <div class="fold-svg-wrap">
+                  <svg id="fold-svg" viewBox="0 0 480 185" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <style>
+                        .svg-label      { font-family: 'Space Mono', monospace; fill: #2a4a7a; font-size: 11px; }
+                        .svg-label-h    { fill: #c04800; font-size: 10px; }
+                        .svg-label-beta { fill: #2a4a7a; font-size: 10px; font-style: italic; }
+                        .svg-label-gam  { fill: #1B3669; font-size: 11px; font-style: italic; font-weight: 700; }
+                        .svg-note       { font-family: 'Space Mono', monospace; fill: rgba(62,119,195,0.5); font-size: 8px; }
+                      </style>
+                    </defs>
+                    <!-- H dimension line (fixed: lox=137, rox=343) -->
+                    <line id="svg-h-line"  x1="137" y1="20" x2="343" y2="20" stroke="rgba(232,90,26,0.55)" stroke-width="1"/>
+                    <line id="svg-tick-l"  x1="137" y1="14" x2="137" y2="26" stroke="rgba(232,90,26,0.55)" stroke-width="1"/>
+                    <line id="svg-tick-r"  x1="343" y1="14" x2="343" y2="26" stroke="rgba(232,90,26,0.55)" stroke-width="1"/>
+                    <text id="svg-h-label" x="240"  y="14"  text-anchor="middle" class="svg-label svg-label-h">H</text>
+                    <!-- End frames (fixed positions: lx=157, rx=323) -->
+                    <rect id="svg-frame-l" x="137" y="32" width="20" height="146" rx="2"
+                          fill="rgba(62,119,195,0.20)" stroke="#3E77C3" stroke-width="1.5"/>
+                    <rect id="svg-frame-r" x="323" y="32" width="20" height="146" rx="2"
+                          fill="rgba(62,119,195,0.20)" stroke="#3E77C3" stroke-width="1.5"/>
+                    <!-- Horizontal baseline (fixed: base corners at lx=157, rx=323) -->
+                    <line id="svg-baseline" x1="123" y1="108" x2="357" y2="108"
+                          stroke="rgba(62,119,195,0.45)" stroke-width="1" stroke-dasharray="5,4"/>
+                    <!-- Central drive column (β=20 initial: apexY≈78, botY≈138) -->
+                    <line id="svg-column" x1="240" y1="78" x2="240" y2="138"
+                          stroke="rgba(27,54,105,0.6)" stroke-width="2.5"/>
+                    <!-- Lower arms (below baseline, symmetric) -->
+                    <line id="svg-arm-l-bot" x1="157" y1="108" x2="240" y2="138"
+                          stroke="rgba(232,90,26,0.28)" stroke-width="1.5"/>
+                    <line id="svg-arm-r-bot" x1="323" y1="108" x2="240" y2="138"
+                          stroke="rgba(232,90,26,0.28)" stroke-width="1.5"/>
+                    <!-- Main arms: base corners → apex -->
+                    <line id="svg-arm-l" x1="157" y1="108" x2="240" y2="78" stroke="#E85A1A" stroke-width="2"/>
+                    <line id="svg-arm-r" x1="323" y1="108" x2="240" y2="78" stroke="#E85A1A" stroke-width="2"/>
+                    <!-- β arcs at base corners -->
+                    <path id="svg-beta-arc-l" d="M175,108 A18,18 0 0,1 169,96"
+                          fill="none" stroke="rgba(62,119,195,0.75)" stroke-width="1.3"/>
+                    <path id="svg-beta-arc-r" d="M305,108 A18,18 0 0,0 311,96"
+                          fill="none" stroke="rgba(62,119,195,0.75)" stroke-width="1.3"/>
+                    <!-- γ arc at apex -->
+                    <path id="svg-gamma-arc" d="M225,84 A16,16 0 0,1 255,84"
+                          fill="none" stroke="rgba(27,54,105,0.7)" stroke-width="1.4"/>
+                    <!-- Apex hinge dot -->
+                    <circle id="svg-apex-dot" cx="240" cy="78" r="4" fill="#E85A1A"/>
+                    <!-- Base corner dots (fixed) -->
+                    <circle id="svg-base-dot-l" cx="157" cy="108" r="3" fill="rgba(148,184,240,0.55)"/>
+                    <circle id="svg-base-dot-r" cx="323" cy="108" r="3" fill="rgba(148,184,240,0.55)"/>
+                    <!-- Labels -->
+                    <text id="svg-beta-l"      x="179"  y="94"  class="svg-label svg-label-beta">β</text>
+                    <text id="svg-beta-r"      x="293"  y="94"  class="svg-label svg-label-beta">β</text>
+                    <text id="svg-gamma-label" x="240"  y="69"  text-anchor="middle" class="svg-label svg-label-gam">γ</text>
+                  </svg>
+                </div>
+
+                <div class="fold-slider-wrap">
+                  <div class="fold-slider-labels">
+                    <span>Folded β=90°</span>
+                    <span>Deployed β=40°</span>
+                  </div>
+                  <input type="range" id="beta-slider" class="fold-slider" min="0" max="50" value="50" step="1">
+                </div>
+
+                <div class="fold-params">
+                  <div class="fold-param">
+                    <span class="param-sym">β</span>
+                    <span class="param-val" id="param-beta">40°</span>
+                    <span class="param-desc">Fold angle</span>
+                  </div>
+                  <div class="fold-param">
+                    <span class="param-sym">γ</span>
+                    <span class="param-val" id="param-gamma">100°</span>
+                    <span class="param-desc">Centre angle</span>
+                  </div>
+                  <div class="fold-param fold-param-accent">
+                    <span class="param-sym">λ</span>
+                    <span class="param-val" id="param-lambda">3.2×</span>
+                    <span class="param-desc">Compression ratio</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="concept-divider"></div>
+
+          <!-- ── Row 3: Connection Diagram 2 → text ── -->
+          <div class="concept-reveal">
+            <div class="concept-inner" id="ci-3">
+              <div class="concept-img-side" onclick="revealConcept('ci-3')">
+                <img src="./Picture/section3/展开连接图2.png" alt="Deployment and Connection Diagram 2" class="concept-img">
+                <span class="concept-hint">Click to explore →</span>
+              </div>
+              <div class="concept-txt-side">
+                <div class="mech-section-label">Deployment &amp; Connection · Diagram 2</div>
+                <h4 class="mech-title">Sequential Deployment Logic</h4>
+                <p class="mech-body">Sequential deployment steps illustrate the locked-to-open transition. Each panel rotates about its hinge axis in a coordinated single-DOF motion, transitioning from compact transport geometry to full spatial enclosure.</p>
+                <p class="mech-body">The self-locking mechanism engages at full deployment: multi-stable potential energy minima hold the structure at the open position without continuous actuation force, reducing operational energy demand.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="concept-divider"></div>
+
+          <!-- ── Row 4: Exploded View → text ── -->
+          <div class="concept-reveal">
+            <div class="concept-inner" id="ci-4">
+              <div class="concept-img-side" onclick="revealConcept('ci-4')">
+                <img src="./Picture/section3/爆炸图.png" alt="System Integration Exploded View" class="concept-img">
+                <span class="concept-hint">Click to explore →</span>
+              </div>
+              <div class="concept-txt-side">
+                <div class="mech-section-label">System Integration · Exploded View</div>
+                <h4 class="mech-title">ETFE + Modular Interfaces</h4>
+                <p class="mech-body">ETFE insulating membrane + rotatable modules + fixed functional interfaces. The membrane retracts in the folded state; in the deployed state it inflates to form an air cushion, achieving simultaneous thermal insulation and airtight sealing.</p>
+                <p class="mech-body">Fixed functional interfaces (power, data, ventilation) are decoupled from the folding motion — they connect through flexible conduits that automatically re-route during deployment without manual intervention.</p>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /sec3-mech -->
+
+      </div><!-- /section-inner -->
+    </section>
+
+    <!-- ======================== SECTION 4: CONNECTIONS ======================== -->
+    <section id="sec-4" class="section">
+      <div class="section-inner">
+
+        <div class="section-header">
+          <div class="sec-num">04</div>
+          <div class="sec-title-wrap">
+            <h2>Connections &amp; Combinations</h2>
+            <p class="sec-subtitle">Joint typology · Geometric assembly logic · Spatial combination matrix</p>
+          </div>
+        </div>
+
+        <!-- Tab Bar -->
+        <div class="tab-bar">
+          <button class="tab-btn active" id="tab4-joints" onclick="switchTab(4,'joints')">
+            <span class="tab-icon">&#x2B21;</span> Joint Types
+          </button>
+          <button class="tab-btn" id="tab4-combos" onclick="switchTab(4,'combos')">
+            <span class="tab-icon">&#x25A6;</span> Combinations
+          </button>
+        </div>
+
+        <!-- ===== TAB 1: Joint Types ===== -->
+        <div class="tab-content active" id="sec4-joints">
+          <p class="joint-intro">Four fundamental connectivity logics define the spatial grammar of the Foldscape Habitat. Each joint type embodies a distinct organisational principle — governing hierarchy, directionality, adaptability, and density — and can be deployed independently or combined to generate complex spatial programmes.</p>
+
+          <div class="joint-grid">
+
+            <div class="joint-card">
+              <div class="joint-img-wrap">
+                <img src="./Picture/section4/基础连接/连接组合-07.png" alt="Radial Hub Joint" class="joint-img">
+              </div>
+              <div class="joint-info">
+                <span class="joint-badge">[1] Radial Hub</span>
+                <h4>Radial Hub Joint</h4>
+                <p>Centred around a hexagonal columnar node that radiates outward in multiple directions, this joint organises functional modules under a single core structure to create a cohesive spatial arrangement. It enables multi-directional expansion within a limited footprint, establishes a clear spatial hierarchy, and allows differentiated prioritisation — effectively segregating functional areas while ensuring relative independence and accessibility for each unit.</p>
+              </div>
+            </div>
+
+            <div class="joint-card">
+              <div class="joint-img-wrap">
+                <img src="./Picture/section4/基础连接/连接组合-08.png" alt="Angled Buffer Joint" class="joint-img">
+              </div>
+              <div class="joint-info">
+                <span class="joint-badge">[2] Angled Buffer</span>
+                <h4>Angled Buffer Joint</h4>
+                <p>By introducing an angular relationship between two units, this method creates a transitional zone with buffering properties, primarily responding to topographical variations, climatic conditions, and ecological boundaries. Compared to linear connections, angled joints offer superior adaptability and elasticity — maintaining structural continuity while regulating movement rhythms and spatial hierarchy, serving as a vital strategy for linking disparate functional zones or environmental interfaces.</p>
+              </div>
+            </div>
+
+            <div class="joint-card">
+              <div class="joint-img-wrap">
+                <img src="./Picture/section4/基础连接/连接组合-09.png" alt="Linear Extension Joint" class="joint-img">
+              </div>
+              <div class="joint-info">
+                <span class="joint-badge">[3] Linear Extension</span>
+                <h4>Linear Extension Joint</h4>
+                <p>Unfolding continuously along a single axis through the serialised assembly of repetitive units, this method establishes a distinct spatial backbone and a continuous flow of movement. It emphasises directionality and order, making it ideal for spatial organisations requiring clear functional workflows or hierarchical zoning — such as laboratory circulation or logistics corridors. Linear extension joints are highly scalable, allowing modular expansion based on demand while maintaining structural logic and spatial order.</p>
+              </div>
+            </div>
+
+            <div class="joint-card">
+              <div class="joint-img-wrap">
+                <img src="./Picture/section4/基础连接/连接组合-10.png" alt="Vertical Stack Joint" class="joint-img">
+              </div>
+              <div class="joint-info">
+                <span class="joint-badge">[4] Vertical Stack</span>
+                <h4>Vertical Stack Joint</h4>
+                <p>Achieving spatial density and functional layering through vertical superposition, this method couples units vertically to create a tiered relationship between different functions at different heights. Particularly suited for scenarios with limited land availability or high-volume requirements — for example, placing utility spaces on lower levels with residential or observation spaces above — vertical stacking optimises land-use efficiency, establishes a clear load-bearing path, and serves as a key strategy for high-density deployment.</p>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- /sec4-joints -->
+
+        <!-- ===== TAB 2: Combinations ===== -->
+        <div class="tab-content" id="sec4-combos">
+
+          <!-- Matrix -->
+          <div class="combo-matrix-wrap">
+            <p class="combo-section-label">Fig. 12 — Connection method combination matrix</p>
+            <div class="combo-matrix">
+              <!-- Row 0: corner + 3 col headers -->
+              <div class="cm-corner"></div>
+              <div class="cm-col-header">Radial Hub<br>Joint</div>
+              <div class="cm-col-header">Angled Buffer<br>Joint</div>
+              <div class="cm-col-header">Linear Extension<br>Joint</div>
+              <!-- Row 1: Vertical Stack -->
+              <div class="cm-row-header">Vertical Stack Joint</div>
+              <div class="cm-cell"><img src="./Picture/section4/组合连接/连接组合-04.png" alt="Radial Hub + Vertical Stack"></div>
+              <div class="cm-cell"><img src="./Picture/section4/组合连接/连接组合-06.png" alt="Angled Buffer + Vertical Stack"></div>
+              <div class="cm-cell"><img src="./Picture/section4/组合连接/连接组合-11.png" alt="Linear Extension + Vertical Stack"></div>
+              <!-- Row 2: Linear Extension -->
+              <div class="cm-row-header">Linear Extension Joint</div>
+              <div class="cm-cell"><img src="./Picture/section4/组合连接/连接组合-03.png" alt="Radial Hub + Linear Extension"></div>
+              <div class="cm-cell"><img src="./Picture/section4/组合连接/连接组合-05.png" alt="Angled Buffer + Linear Extension"></div>
+              <div class="cm-cell cm-cell-empty"></div>
+              <!-- Row 3: Angled Buffer -->
+              <div class="cm-row-header">Angled Buffer Joint</div>
+              <div class="cm-cell"><img src="./Picture/section4/组合连接/连接组合-02.png" alt="Radial Hub + Angled Buffer"></div>
+              <div class="cm-cell cm-cell-empty"></div>
+              <div class="cm-cell cm-cell-empty"></div>
+            </div>
+          </div>
+
+          <!-- 6 Combination Cards -->
+          <p class="combo-section-label">Six composite spatial modes</p>
+          <div class="combo-grid">
+
+            <div class="combo-card">
+              <div class="combo-img-wrap">
+                <img src="./Picture/section4/组合连接/连接组合-02.png" alt="Radial Hub + Angled Buffer" class="combo-img">
+              </div>
+              <div class="combo-info">
+                <div class="combo-tags">
+                  <span class="combo-tag">Radial Hub</span>
+                  <span class="combo-tag">Angled Buffer</span>
+                </div>
+                <h4>Hierarchical Core–Ecological Transition</h4>
+                <p>Defines central functional hierarchies while softening boundaries through angular transitions, rendering the core space simultaneously cohesive and environmentally responsive. The hub anchors social organisation while the buffer zone mediates between built form and natural terrain.</p>
+              </div>
+            </div>
+
+            <div class="combo-card">
+              <div class="combo-img-wrap">
+                <img src="./Picture/section4/组合连接/连接组合-03.png" alt="Radial Hub + Linear Extension" class="combo-img">
+              </div>
+              <div class="combo-info">
+                <div class="combo-tags">
+                  <span class="combo-tag">Radial Hub</span>
+                  <span class="combo-tag">Linear Extension</span>
+                </div>
+                <h4>Core-Driven Axial Order</h4>
+                <p>The hub anchors spatial hierarchy and centrality while linear units unfold along a primary axis to facilitate clear operational workflows, harmonising social structures with functional sequences. Ideal for research station layouts requiring both a communal core and directional programme.</p>
+              </div>
+            </div>
+
+            <div class="combo-card">
+              <div class="combo-img-wrap">
+                <img src="./Picture/section4/组合连接/连接组合-04.png" alt="Radial Hub + Vertical Stack" class="combo-img">
+              </div>
+              <div class="combo-info">
+                <div class="combo-tags">
+                  <span class="combo-tag">Radial Hub</span>
+                  <span class="combo-tag">Vertical Stack</span>
+                </div>
+                <h4>Three-Dimensional Hierarchical Core</h4>
+                <p>Superimposes vertical stratification onto planar aggregation, further partitioning the core space along the vertical axis to enhance both density and structural articulation. Generates a multi-level hub suited to high-occupancy scenarios with differentiated programme by floor.</p>
+              </div>
+            </div>
+
+            <div class="combo-card">
+              <div class="combo-img-wrap">
+                <img src="./Picture/section4/组合连接/连接组合-05.png" alt="Angled Buffer + Linear Extension" class="combo-img">
+              </div>
+              <div class="combo-info">
+                <div class="combo-tags">
+                  <span class="combo-tag">Angled Buffer</span>
+                  <span class="combo-tag">Linear Extension</span>
+                </div>
+                <h4>Environmentally Adaptive Sequential System</h4>
+                <p>Maintains functional continuity while modulating spatial rhythm through angular shifts, ensuring that axial expansion remains elastic and topographically sensitive rather than rigid. The angular pivot absorbs site irregularities without interrupting the linear programme flow.</p>
+              </div>
+            </div>
+
+            <div class="combo-card">
+              <div class="combo-img-wrap">
+                <img src="./Picture/section4/组合连接/连接组合-06.png" alt="Angled Buffer + Vertical Stack" class="combo-img">
+              </div>
+              <div class="combo-info">
+                <div class="combo-tags">
+                  <span class="combo-tag">Angled Buffer</span>
+                  <span class="combo-tag">Vertical Stack</span>
+                </div>
+                <h4>Three-Dimensional Adaptive Framework</h4>
+                <p>Utilises the synergy of planar angling and vertical stacking to provide a multi-dimensional response to complex site conditions, enabling spatial regulation across both horizontal and vertical planes. Well-suited to uneven terrain demanding simultaneous slope adaptation and vertical efficiency.</p>
+              </div>
+            </div>
+
+            <div class="combo-card">
+              <div class="combo-img-wrap">
+                <img src="./Picture/section4/组合连接/连接组合-11.png" alt="Linear Extension + Vertical Stack" class="combo-img">
+              </div>
+              <div class="combo-info">
+                <div class="combo-tags">
+                  <span class="combo-tag">Linear Extension</span>
+                  <span class="combo-tag">Vertical Stack</span>
+                </div>
+                <h4>High-Efficiency Stratified Sequence</h4>
+                <p>Reinforces axial logic with vertical functional zoning, preserving procedural clarity while optimising spatial density and utilisation efficiency. The result is a compact, ordered formation that maximises usable area per footprint — suitable for constrained deployment zones.</p>
+              </div>
+            </div>
+
+          </div><!-- /combo-grid -->
+
+        </div><!-- /sec4-combos -->
+
+      </div><!-- /section-inner -->
+    </section>
+
+    <!-- ======================== SECTION 5: SPATIAL STRATEGY ======================== -->
+    <section id="sec-5" class="section">
+      <div class="section-inner">
+
+        <!-- Section Header -->
+        <div class="sec-header">
+          <div class="sec-num">05</div>
+          <div class="sec-title-group">
+            <h2 class="sec-title">Spatial Strategy</h2>
+            <p class="sec-sub">Scalable programme across three occupancy tiers — translating functional requirements into a networked system of deployable modules</p>
+          </div>
+        </div>
+
+        <!-- Tab Bar -->
+        <div class="tab-bar">
+          <button class="tab-btn active" id="tab5-systems" onclick="switchTab(5,'systems')">
+            <span class="tab-icon">&#x2B21;</span> Space Systems
+          </button>
+          <button class="tab-btn" id="tab5-scale" onclick="switchTab(5,'scale')">
+            <span class="tab-icon">&#x25A6;</span> Scale Analysis
+          </button>
+          <button class="tab-btn" id="tab5-flow" onclick="switchTab(5,'flow')">
+            <span class="tab-icon">&#x21C4;</span> Spatial Flow
+          </button>
+        </div>
+
+        <!-- ===== TAB 1: Space Systems ===== -->
+        <div class="tab-content active" id="sec5-systems">
+          <p class="sec5-intro">In extreme and fragile ecosystems, a research station must function as a highly integrated "micro-infrastructure" system. Rather than a traditional room list, five interconnected functional systems define the complete spatial programme — each translated into a network of foldable, deployable modules through the three-layer logic of System–Module–Aggregation.</p>
+
+          <div class="space-systems-grid">
+
+            <!-- Research Space -->
+            <div class="space-system-card">
+              <div class="ss-color-bar" style="background:#E85A1A;"></div>
+              <div class="ss-body">
+                <div class="ss-title">Research Space</div>
+                <div class="ss-rooms">
+                  <span class="ss-room-tag" style="background:rgba(232,90,26,0.12);color:#E85A1A;">Sample Pre-processing Room</span>
+                  <span class="ss-room-tag" style="background:rgba(232,90,26,0.12);color:#E85A1A;">Cleanroom</span>
+                  <span class="ss-room-tag" style="background:rgba(232,90,26,0.12);color:#E85A1A;">Data Analysis Room</span>
+                  <span class="ss-room-tag" style="background:rgba(232,90,26,0.12);color:#E85A1A;">Data Center</span>
+                  <span class="ss-room-tag" style="background:rgba(232,90,26,0.12);color:#E85A1A;">Observation Tower</span>
+                </div>
+                <p class="ss-desc">The heart of any scientific station — a controlled environment for discovery. The layout follows a "research workflow chain" from collecting and processing to analyzing and storing, with strict clean/dirty zone separation. Environmental stability is critical: precise temperature, humidity, and vibration control; independent ventilation; and backup power for instrument rooms.</p>
+              </div>
+            </div>
+
+            <!-- Living System -->
+            <div class="space-system-card">
+              <div class="ss-color-bar" style="background:#D4A85B;"></div>
+              <div class="ss-body">
+                <div class="ss-title">Living System Space</div>
+                <div class="ss-rooms">
+                  <span class="ss-room-tag" style="background:rgba(212,168,91,0.15);color:#9E7230;">Sleeping Unit</span>
+                  <span class="ss-room-tag" style="background:rgba(212,168,91,0.15);color:#9E7230;">Dining Space</span>
+                  <span class="ss-room-tag" style="background:rgba(212,168,91,0.15);color:#9E7230;">Bathroom</span>
+                  <span class="ss-room-tag" style="background:rgba(212,168,91,0.15);color:#9E7230;">Medical / First Aid Space</span>
+                </div>
+                <p class="ss-desc">The backbone for long-term residents — a "micro-living ecosystem" balancing privacy with social areas so individuals can recharge while the team stays connected. High standards for warmth, soundproofing, and hygiene are essential. Sleeping quarters must be quiet, dark, and well-insulated; dining areas should maximise natural light.</p>
+              </div>
+            </div>
+
+            <!-- Energy & Ecosystem -->
+            <div class="space-system-card">
+              <div class="ss-color-bar" style="background:#2DA44E;"></div>
+              <div class="ss-body">
+                <div class="ss-title">Energy &amp; Ecosystem Space</div>
+                <div class="ss-rooms">
+                  <span class="ss-room-tag" style="background:rgba(45,164,78,0.12);color:#1A7A3A;">Energy Pod</span>
+                  <span class="ss-room-tag" style="background:rgba(45,164,78,0.12);color:#1A7A3A;">Water Treatment System</span>
+                  <span class="ss-room-tag" style="background:rgba(45,164,78,0.12);color:#1A7A3A;">Waste Sorting &amp; Compaction</span>
+                  <span class="ss-room-tag" style="background:rgba(45,164,78,0.12);color:#1A7A3A;">Mechanical Equipment Room</span>
+                </div>
+                <p class="ss-desc">The station's life support — a sustainable "technical ecosystem" for off-grid self-sufficiency handling power generation, water recycling, and waste treatment. These areas are usually separated from living and research zones due to noise and vibration. Power units must be fireproof and accessible; mechanical rooms need heavy-duty ventilation.</p>
+              </div>
+            </div>
+
+            <!-- Community & Psychological -->
+            <div class="space-system-card">
+              <div class="ss-color-bar" style="background:#7B61E8;"></div>
+              <div class="ss-body">
+                <div class="ss-title">Community &amp; Psychological Support</div>
+                <div class="ss-rooms">
+                  <span class="ss-room-tag" style="background:rgba(123,97,232,0.12);color:#5A42B8;">Meditation Space</span>
+                  <span class="ss-room-tag" style="background:rgba(123,97,232,0.12);color:#5A42B8;">Viewing Space</span>
+                  <span class="ss-room-tag" style="background:rgba(123,97,232,0.12);color:#5A42B8;">Public Interaction Space</span>
+                </div>
+                <p class="ss-desc">Vital for team stability during long stays — symbolic spaces that help people reconnect with nature, each other, and themselves. These areas prioritise natural light, wide views, and comfortable materials. An open feel and plenty of sunlight prevent the "boxed-in" feeling; quiet zones help reduce stress. Warm textures and slightly larger scales provide a mental "breathing space".</p>
+              </div>
+            </div>
+
+            <!-- Communication -->
+            <div class="space-system-card">
+              <div class="ss-color-bar" style="background:#1B7CE8;"></div>
+              <div class="ss-body">
+                <div class="ss-title">Communication Space</div>
+                <div class="ss-rooms">
+                  <span class="ss-room-tag" style="background:rgba(27,124,232,0.12);color:#1055AA;">Airlock Entrance</span>
+                  <span class="ss-room-tag" style="background:rgba(27,124,232,0.12);color:#1055AA;">Meeting / Remote Communication Space</span>
+                </div>
+                <p class="ss-desc">The station's gateway to the outside world — handling people flow in and out while serving as a hub for academic sharing and remote teamwork. In extreme environments this area acts as both a protective shield and an information lifeline. The entrance requires an airlock buffer zone; remote meeting spaces need rock-solid communication systems, great acoustics, and backup power.</p>
+              </div>
+            </div>
+
+          </div><!-- /space-systems-grid -->
+        </div><!-- /tab 1 -->
+
+        <!-- ===== TAB 2: Scale Analysis ===== -->
+        <div class="tab-content" id="sec5-scale">
+
+          <!-- Sub-tab bar -->
+          <div class="scale-subtab-bar">
+            <button class="scale-stab active" data-scale="small" onclick="switchScaleTab('small')">Small — 10p</button>
+            <button class="scale-stab" data-scale="medium" onclick="switchScaleTab('medium')">Medium — 30p</button>
+            <button class="scale-stab" data-scale="large" onclick="switchScaleTab('large')">Large — 80p</button>
+          </div>
+
+          <!-- Small -->
+          <div class="scale-panel active" data-scale="small">
+            <div class="scale-table-wrap">
+              <img src="./Picture/section5/表格图/small.png" alt="Small-scale module table" class="scale-table-img">
+            </div>
+            <div class="scale-facts">
+              <div class="scale-fact-item">
+                <span class="scale-fact-label">Occupants</span>
+                <span class="scale-fact-value">10</span>
+                <span class="scale-fact-unit">permanent residents</span>
+              </div>
+              <div class="scale-fact-item">
+                <span class="scale-fact-label">Total Area</span>
+                <span class="scale-fact-value">~1,000</span>
+                <span class="scale-fact-unit">m²</span>
+              </div>
+              <div class="scale-fact-item">
+                <span class="scale-fact-label">Staff Composition</span>
+                <span class="scale-fact-unit">6–7 researchers + 2–3 technical/logistics personnel, with possible seasonal rotation</span>
+              </div>
+              <p class="scale-fact-desc">Field sampling and short-cycle sample processing coexist. The logistical "base-load cost" is proportionally high — power generation, water treatment, maintenance, and storage claim a larger share at this scale. Compact integration of basic living and essential research is the key design driver.</p>
+            </div>
+          </div>
+
+          <!-- Medium -->
+          <div class="scale-panel" data-scale="medium">
+            <div class="scale-table-wrap">
+              <img src="./Picture/section5/表格图/medium.png" alt="Medium-scale module table" class="scale-table-img">
+            </div>
+            <div class="scale-facts">
+              <div class="scale-fact-item">
+                <span class="scale-fact-label">Occupants</span>
+                <span class="scale-fact-value">30</span>
+                <span class="scale-fact-unit">permanent residents</span>
+              </div>
+              <div class="scale-fact-item">
+                <span class="scale-fact-label">Total Area</span>
+                <span class="scale-fact-value">~2,800</span>
+                <span class="scale-fact-unit">m²</span>
+              </div>
+              <div class="scale-fact-item">
+                <span class="scale-fact-label">Staff Composition</span>
+                <span class="scale-fact-unit">Clearer division of roles among research, technical, and logistics staff</span>
+              </div>
+              <p class="scale-fact-desc">Sample processing and laboratory activities become routine and institutionalised. Demand for academic and office space increases. Unloading, storage, and vehicle maintenance organise into a clearly defined back-of-house service chain. Clearer functional differentiation begins to emerge across the programme.</p>
+            </div>
+          </div>
+
+          <!-- Large -->
+          <div class="scale-panel" data-scale="large">
+            <div class="scale-table-wrap">
+              <img src="./Picture/section5/表格图/large.png" alt="Large-scale module table" class="scale-table-img">
+            </div>
+            <div class="scale-facts">
+              <div class="scale-fact-item">
+                <span class="scale-fact-label">Occupants</span>
+                <span class="scale-fact-value">80</span>
+                <span class="scale-fact-unit">permanent residents</span>
+              </div>
+              <div class="scale-fact-item">
+                <span class="scale-fact-label">Total Area</span>
+                <span class="scale-fact-value">~8,400</span>
+                <span class="scale-fact-unit">m²</span>
+              </div>
+              <div class="scale-fact-item">
+                <span class="scale-fact-label">Staff Composition</span>
+                <span class="scale-fact-unit">High specialisation across research teams, technical platforms, logistics, and security</span>
+              </div>
+              <p class="scale-fact-desc">Research adopts "general laboratory + specialised instrument platform" configurations — cleanroom conditions, constant temperature/humidity control, and vibration isolation. Greater emphasis on reliability of the sample chain and data chain. High specialisation and systemisation across all functional categories.</p>
+            </div>
+          </div>
+
+          <!-- Figure 13 -->
+          <div class="scale-figure-wrap">
+            <img src="./Picture/section5/小社区图.png" alt="Spatial Type Proportion Analysis" class="scale-figure-img">
+            <span class="scale-figure-caption">Figure 13 — Spatial Type Proportion Analysis Chart (Small 30p / Medium 80p / Large 200p)</span>
+          </div>
+
+        </div><!-- /tab 2 -->
+
+        <!-- ===== TAB 3: Spatial Flow ===== -->
+        <div class="tab-content" id="sec5-flow">
+
+          <!-- Sankey layer labels -->
+          <div class="sankey-layer-labels">
+            <span class="sankey-layer-label">Functional Spaces</span>
+            <span class="sankey-layer-label">Joint Combinations</span>
+            <span class="sankey-layer-label">Joint Types</span>
+          </div>
+
+          <!-- Sankey diagram -->
+          <div class="sankey-container">
+            <div id="sankey-svg-wrap"></div>
+          </div>
+
+          <!-- Tooltip (global, fixed position) -->
+          <div class="sankey-tooltip" id="sankey-tooltip"></div>
+
+          <!-- Figure 15 -->
+          <div class="flow-figure-wrap">
+            <img src="./Picture/section5/社区分析图.png" alt="Space and Flow of Small Research Station" class="flow-figure-img">
+            <div class="flow-zone-legend">
+              <div class="flow-zone-item">
+                <span class="flow-zone-dot" style="background:#5B8FD4;"></span>Work Zone
+              </div>
+              <div class="flow-zone-item">
+                <span class="flow-zone-dot" style="background:#D45B5B;"></span>Experiment Zone
+              </div>
+              <div class="flow-zone-item">
+                <span class="flow-zone-dot" style="background:#D4A85B;"></span>Living Zone
+              </div>
+            </div>
+            <span class="flow-figure-caption">Figure 15 — Space and Flow of Small Research Station (Work Zone / Experiment Zone / Living Zone)</span>
+          </div>
+
+        </div><!-- /tab 3 -->
+
+      </div><!-- /section-inner -->
+    </section>
+
+    <!-- ======================== SECTION 6: SITE ======================== -->
+    <section id="sec-6" class="section">
+      <div class="section-inner">
+
+        <!-- Header -->
+        <div class="section-header">
+          <div class="sec-num">06</div>
+          <div class="sec-title-wrap">
+            <h2>Site-based Design Validation</h2>
+            <p class="sec-subtitle">Candidate evaluation · Site conditions · Final site selection</p>
+          </div>
+        </div>
+
+        <!-- Tab Bar -->
+        <div class="tab-bar">
+          <button class="tab-btn active" id="tab6-candidates" onclick="switchTab(6,'candidates')">
+            <span class="tab-icon">&#x25A2;</span> Candidate Sites
+          </button>
+          <button class="tab-btn" id="tab6-conditions" onclick="switchTab(6,'conditions')">
+            <span class="tab-icon">&#x26A0;</span> Site Conditions
+          </button>
+          <button class="tab-btn" id="tab6-final" onclick="switchTab(6,'final')">
+            <span class="tab-icon">&#x25C6;</span> Final Site
+          </button>
+        </div>
+
+        <!-- ===== TAB 1: CANDIDATE SITES ===== -->
+        <div class="tab-content active" id="sec6-candidates">
+          <p class="sec6-intro">Four extreme-environment regions were identified as potential sites for design validation, each offering distinct ecological, logistical, and climatic characteristics relevant to foldable habitat research.</p>
+          <div class="site-grid">
+
+            <!-- Card 1: Qinghai-Tibet Plateau -->
+            <div class="site-card">
+              <div class="site-card-img-wrap">
+                <img src="./Picture/section6/qinghai.jpeg" alt="Qinghai-Tibet Plateau" class="site-card-img">
+              </div>
+              <div class="site-card-info">
+                <div class="site-location-wrap">
+                  <span class="site-location-badge">China</span>
+                  <span class="site-region-label">Qinghai-Tibet Plateau</span>
+                </div>
+                <h4 class="site-card-title">Roof of the World</h4>
+                <p class="site-card-desc">Known as the "Roof of the World," the Tibetan Plateau sits at an average altitude of over 4,000 metres, characterised by extreme cold, sharp day-night temperature swings, intense UV rays, and vast permafrost. Its fragile ecosystem makes it an ideal testing ground for lightweight, low-impact, reversible prototypes, with integrated solar power enabling off-grid living for mobile research stations and seasonal housing.</p>
+              </div>
+            </div>
+
+            <!-- Card 2: Lapland Region -->
+            <div class="site-card">
+              <div class="site-card-img-wrap">
+                <img src="./Picture/section6/Lapland Region, Sweden.webp" alt="Lapland Region, Sweden" class="site-card-img">
+              </div>
+              <div class="site-card-info">
+                <div class="site-location-wrap">
+                  <span class="site-location-badge">Sweden / Finland / Norway</span>
+                  <span class="site-region-label">Lapland Region</span>
+                </div>
+                <h4 class="site-card-title">Arctic Circle Frontier</h4>
+                <p class="site-card-desc">Located within the Arctic Circle, Lapland is defined by long winters, polar nights, and extreme cold. Foldable modules shipped in containers can be deployed quickly, minimising damage to the fragile tundra. High-performance insulation and adjustable shapes allow adaptation across seasons — perfect for Northern Lights viewing, research camps, and low-impact tourism within developed infrastructure.</p>
+              </div>
+            </div>
+
+            <!-- Card 3: Western Sichuan Plateau -->
+            <div class="site-card">
+              <div class="site-card-img-wrap">
+                <img src="./Picture/section6/Western Sichuan Plateau, China.jpg" alt="Western Sichuan Plateau" class="site-card-img">
+              </div>
+              <div class="site-card-info">
+                <div class="site-location-wrap">
+                  <span class="site-location-badge">China</span>
+                  <span class="site-region-label">Western Sichuan Plateau</span>
+                </div>
+                <h4 class="site-card-title">Eastern Tibetan Edge</h4>
+                <p class="site-card-desc">Located on the eastern edge of the Tibetan Plateau, this region features high-altitude meadows, deep canyons, and active seismic zones. As the source of the Yangtze and Yellow Rivers, its ecologically fragile terrain demands structures that reduce seismic impact and adapt to steep, irregular slopes without disturbing soil — applicable to post-disaster housing, eco-tourism, or research outposts.</p>
+              </div>
+            </div>
+
+            <!-- Card 4: Antarctic Peninsula -->
+            <div class="site-card">
+              <div class="site-card-img-wrap">
+                <img src="./Picture/section6/Antarctic Peninsula.avif" alt="Antarctic Peninsula" class="site-card-img">
+              </div>
+              <div class="site-card-info">
+                <div class="site-location-wrap">
+                  <span class="site-location-badge">Antarctica</span>
+                  <span class="site-region-label">Antarctic Peninsula</span>
+                </div>
+                <h4 class="site-card-title">Most Rigorous Test Ground</h4>
+                <p class="site-card-desc">A global hotspot for climate change and international research, the Antarctic Peninsula demands a strict "leave no trace" approach under international treaties. Lightweight modules transported by ship or air drastically reduce on-site construction time and allow total removal after a mission, serving as the ultimate test of structural stability, thermal performance, and energy self-sufficiency under the harshest conditions on Earth.</p>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- /tab 1 -->
+
+        <!-- ===== TAB 2: SITE CONDITIONS ===== -->
+        <div class="tab-content" id="sec6-conditions">
+          <p class="sec6-conditions-intro">Site selection in extreme environments is not driven by any single factor — it is the result of multi-variable coupling across environment, geology, climate, logistics, and policy. This issue is fundamentally concerned with structural safety, long-term operational stability, and institutional feasibility. A systematic analysis across four critical dimensions is required.</p>
+          <div class="criteria-grid">
+
+            <!-- Condition 1: Natural Environment -->
+            <div class="criteria-card">
+              <div class="criteria-color-bar" style="background:#E85A1A;"></div>
+              <div class="criteria-body">
+                <div class="criteria-header">
+                  <span class="criteria-num">01</span>
+                  <span class="criteria-label" style="color:#E85A1A;">Natural Environment</span>
+                </div>
+                <ul class="criteria-points">
+                  <li>Extreme cold, strong winds, heavy snow, and permafrost exert enormous pressure on structures and materials</li>
+                  <li>High-quality insulation and freeze-resistant designs are required to prevent material brittleness and heat loss</li>
+                  <li>Wind vibrations and ice loads in high-altitude or polar regions continuously threaten structural integrity</li>
+                </ul>
+                <p class="criteria-desc">The combination of isolation and extreme weather significantly increases maintenance and supply costs, making every risk more dangerous. Site selection must evaluate environmental loads and material needs from the outset — not as afterthoughts in the design process.</p>
+              </div>
+            </div>
+
+            <!-- Condition 2: Geological Stability -->
+            <div class="criteria-card">
+              <div class="criteria-color-bar" style="background:#8B6348;"></div>
+              <div class="criteria-body">
+                <div class="criteria-header">
+                  <span class="criteria-num">02</span>
+                  <span class="criteria-label" style="color:#8B6348;">Geological Stability</span>
+                </div>
+                <ul class="criteria-points">
+                  <li>Soil stability, earthquakes, landslides, slopes, and groundwater all affect how the ground supports building loads</li>
+                  <li>Permafrost melting can reduce ground strength by <strong>20–45%</strong>, altering how structures vibrate and react to movement</li>
+                  <li>Future permafrost degradation under climate change must be predicted — not just present-day conditions assessed</li>
+                </ul>
+                <p class="criteria-desc">Geological safety is not a one-time check — it is a dynamic process that changes over time. Even local plants and microorganisms can alter how soil holds heat, indirectly affecting long-term stability of foundations.</p>
+              </div>
+            </div>
+
+            <!-- Condition 3: Logistics Accessibility -->
+            <div class="criteria-card">
+              <div class="criteria-color-bar" style="background:#3AA68B;"></div>
+              <div class="criteria-body">
+                <div class="criteria-header">
+                  <span class="criteria-num">03</span>
+                  <span class="criteria-label" style="color:#3AA68B;">Logistics Accessibility</span>
+                </div>
+                <ul class="criteria-points">
+                  <li>Very short construction seasons, limited transport routes, and difficult supply chains constrain site viability</li>
+                  <li>Helicopter weight limits and multi-team coordination must be integrated into site-selection planning from the start</li>
+                  <li>Modular prefabrication — building parts in a factory and shipping in containers — drastically reduces on-site time</li>
+                </ul>
+                <p class="criteria-desc">Modular hubs targeting zero emissions and self-sufficiency reduce dependence on constant external supply, making the whole system far more resilient. Logistics is not an afterthought but a primary design constraint in extreme environments.</p>
+              </div>
+            </div>
+
+            <!-- Condition 4: Policy & Governance -->
+            <div class="criteria-card">
+              <div class="criteria-color-bar" style="background:#5B67D4;"></div>
+              <div class="criteria-body">
+                <div class="criteria-header">
+                  <span class="criteria-num">04</span>
+                  <span class="criteria-label" style="color:#5B67D4;">Policy &amp; Governance</span>
+                </div>
+                <ul class="criteria-points">
+                  <li>The Antarctic Treaty and Arctic co-management agreements between countries set binding environmental boundaries</li>
+                  <li>Laws on transporting, assembling, and permitting modular buildings affect project timelines and operational scope</li>
+                  <li>Governance rules often decide maximum project scale and duration of permitted occupation</li>
+                </ul>
+                <p class="criteria-desc">Because these rules often decide how big a project can be or how long it can stay active, they must be studied during the site-selection phase. Ignoring governance constraints early can lead to costly delays or complete project shutdown.</p>
+              </div>
+            </div>
+
+          </div>
+        </div><!-- /tab 2 -->
+
+        <!-- ===== TAB 3: FINAL SITE ===== -->
+        <div class="tab-content" id="sec6-final">
+
+          <!-- Hero: Info card + Map -->
+          <div class="final-site-hero">
+            <div class="final-site-info">
+              <div class="fsi-label">Selected Site</div>
+              <h3 class="fsi-title">Origin of the Yellow River</h3>
+              <div class="fsi-tags">
+                <span class="fsi-tag">Qinghai-Tibet Plateau</span>
+                <span class="fsi-tag">Avg. 4,000 m+</span>
+                <span class="fsi-tag">Alpine Wetland</span>
+                <span class="fsi-tag">Eling &amp; Zaling Lakes</span>
+                <span class="fsi-tag">Near Duoyong Village</span>
+                <span class="fsi-tag">Eco-sensitive Zone</span>
+              </div>
+              <p class="fsi-summary">Located within the core environment of the Yellow River source area, this region carries important natural and cultural value while presenting a practical need for scientific research and ecological monitoring in alpine environments. The site achieves a balance among ecological representativeness, research demand, landscape character, and basic accessibility.</p>
+            </div>
+            <div class="final-site-map">
+              <img src="./Picture/section6/Site plan.png" alt="Site analysis diagram — Origin of the Yellow River" class="final-site-map-img zoomable" onclick="openLightbox(this)">
+              <span class="final-site-map-caption">Site analysis diagram. Eling Lake · Zaling Lake · Duoyong Village · SITE</span>
+            </div>
+          </div>
+
+          <!-- Three-column descriptive text -->
+          <div class="final-site-texts">
+
+            <div class="fst-col">
+              <div class="fst-col-title">Site Selection Rationale</div>
+              <p class="fst-col-body">During site selection, this study focused on ecological sensitivity, scientific representativeness, environmental complexity, and basic accessibility. The Yellow River source region responds well to all criteria. The area contains diverse landscape types — plateau lakes, wetlands, and alpine meadows — providing a strong spatial basis for long-term environmental monitoring and ecological research.</p>
+              <p class="fst-col-body">Compared with extremely inaccessible areas, this site retains strong environmental representativeness while still allowing a degree of transport connection and logistical support, making it more suitable as a validation setting for the prototype design.</p>
+            </div>
+
+            <div class="fst-col">
+              <div class="fst-col-title">Site Characteristics</div>
+              <p class="fst-col-body">The most distinctive feature is its combination of natural sensitivity and practical supporting conditions. The surrounding lakes and wetland systems introduce complex environmental constraints — changing ground-bearing conditions, hydrological influence, and seasonal freeze–thaw cycles — requiring that architectural design respond directly to the relationships among topography, climate, and the ecological system.</p>
+              <p class="fst-col-body">The nearby road provides basic module transportation and maintenance access, while the presence of a nearby village offers limited but essential support in material supply and short-term staffing. These conditions reduce implementation cost while preserving the remoteness and research authenticity of the location.</p>
+            </div>
+
+            <div class="fst-col">
+              <div class="fst-col-title">Relationship Between Design and Site</div>
+              <p class="fst-col-body">Design validation on this site focuses on three aspects. First, how the building can adapt to an alpine wetland edge condition through a lightweight and deployable form. Second, how the modular system achieves relatively efficient deployment by making use of existing road and supply conditions. Third, how spatial organisation can create a balance among scientific research, human habitation, and ecological protection.</p>
+              <p class="fst-col-body">The site is not simply a background for the design — it is an active factor that helps shape the architectural system itself, and becomes a central basis for evaluating the feasibility of the proposed design strategy.</p>
+            </div>
+
+          </div>
+
+        </div><!-- /tab 3 -->
+
+      </div><!-- /section-inner -->
+    </section>
+
+    <!-- ======================== SECTION 7: DESIGN PROPOSAL ======================== -->
+    <section id="sec-7" class="section">
+      <div class="section-inner">
+        <div class="section-header">
+          <div class="sec-num">07</div>
+          <div class="sec-title-wrap">
+            <h2>Design Proposal</h2>
+            <p class="sec-subtitle">Assembly sequence · Outdoor space · Spatial layout · Perspectives</p>
+          </div>
+        </div>
+
+        <!-- Tab navigation -->
+        <div class="tab-bar">
+          <button class="tab-btn active" id="tab7-assembly" onclick="switchTab(7,'assembly')"><span class="tab-icon">&#x25B6;</span> Assembly Sequence</button>
+          <button class="tab-btn" id="tab7-outdoor" onclick="switchTab(7,'outdoor')"><span class="tab-icon">&#x25C7;</span> Outdoor Space</button>
+          <button class="tab-btn" id="tab7-spatial" onclick="switchTab(7,'spatial')"><span class="tab-icon">&#x25A1;</span> Spatial Design</button>
+          <button class="tab-btn" id="tab7-perspectives" onclick="switchTab(7,'perspectives')"><span class="tab-icon">&#x25C6;</span> Perspectives</button>
+        </div>
+
+        <!-- Tab 1: Assembly Sequence (01–03, 3-column) -->
+        <div class="tab-content active" id="sec7-assembly">
+          <p class="sec7-intro">The construction logic of this project is based on a light-intervention deployment system combining off-site prefabrication, compact folded transportation, and rapid on-site assembly — reducing disturbance to fragile environments while enabling fully reversible construction.</p>
+          <div class="criteria-grid criteria-grid--3col">
+
+            <!-- Phase 01 -->
+            <div class="criteria-card">
+              <div class="criteria-color-bar" style="background:#3AA68B;"></div>
+              <div class="criteria-body">
+                <div class="criteria-header">
+                  <span class="criteria-num">01</span>
+                  <span class="criteria-label" style="color:#3AA68B;">Prefabrication &amp; Preparation</span>
+                </div>
+                <ul class="criteria-points">
+                  <li><strong>Steps 1–5</strong>: Prefabricate structural base, assemble frame and door panels, place boards and outer envelope shell, inspect, lift and load</li>
+                  <li>Energy, water, drainage, and equipment interface systems are pre-integrated into modules in the factory</li>
+                  <li>Each module receives a coding system and installation sequence to guide later deployment</li>
+                  <li>Folding tests, joint verification, and interface testing ensure reliability throughout transport</li>
+                </ul>
+                <p class="criteria-desc">By shifting complex assembly into a controlled factory environment, on-site implementation is transformed from construction into deployment — significantly enhancing precision and reducing field errors.</p>
+                <div class="deploy-img-wrap">
+                  <img src="./Picture/section7/step1-5.png" alt="Prefabrication steps 1–5" onclick="openLightbox(this)">
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 02 -->
+            <div class="criteria-card">
+              <div class="criteria-color-bar" style="background:#5B67D4;"></div>
+              <div class="criteria-body">
+                <div class="criteria-header">
+                  <span class="criteria-num">02</span>
+                  <span class="criteria-label" style="color:#5B67D4;">Transportation &amp; Site Setup</span>
+                </div>
+                <ul class="criteria-points">
+                  <li><strong>Steps 6–8</strong>: Transport in folded configuration, confirm site conditions, install reversible point supports</li>
+                  <li>Compact folded form reduces unit volume and reliance on heavy transport equipment or high-standard roads</li>
+                  <li>Routes follow existing paths or prior construction traces to avoid creating new disturbed surfaces</li>
+                  <li>Point supports (screw piles, micro-piles, or pedestals) minimise ground disturbance and allow future disassembly</li>
+                </ul>
+                <p class="criteria-desc">Transportation itself constitutes the first layer of site impact. The strategy is concerned not only with how modules arrive, but with how they arrive through the lowest possible level of environmental intervention.</p>
+                <div class="deploy-img-wrap">
+                  <img src="./Picture/section7/step6-8.png" alt="Transportation and site setup steps 6–8" onclick="openLightbox(this)">
+                </div>
+              </div>
+            </div>
+
+            <!-- Phase 03 -->
+            <div class="criteria-card">
+              <div class="criteria-color-bar" style="background:#E85A1A;"></div>
+              <div class="criteria-body">
+                <div class="criteria-header">
+                  <span class="criteria-num">03</span>
+                  <span class="criteria-label" style="color:#E85A1A;">Module Deployment</span>
+                </div>
+                <ul class="criteria-points">
+                  <li><strong>Steps 9–10</strong>: Unload and unfold modules in sequence; fix lower structure to point supports</li>
+                  <li>Hinged joints, guiding elements, and auxiliary supports mediate the transformation from compact to spatial condition</li>
+                  <li>Inter-module connections support linear, angled, or hub-based configurations responding to terrain and programme</li>
+                  <li>Architecture transforms from individual units into a collective settlement with continuous circulation and functional zoning</li>
+                </ul>
+                <p class="criteria-desc">This unfolding logic resembles an act of "spatial release" rather than conventional building — its advantages lie in operational clarity, speed, and the reduction of on-site waste and temporary facilities.</p>
+                <div class="deploy-img-wrap">
+                  <img src="./Picture/section7/step9-10.png" alt="Module unfolding and connection steps 9–10" onclick="openLightbox(this)">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tab: Outdoor Space -->
+        <div class="tab-content" id="sec7-outdoor">
+          <p class="sec7-intro">The outdoor buffer system completes the settlement's environmental strategy — triangular BIPV units create semi-enclosed grey spaces between interior and landscape, while the folding tent entrance provides a secondary climatic transition zone before the airlock.</p>
+
+          <!-- Two-column layout -->
+          <div class="outdoor-two-col">
+
+            <!-- Left: Triangular BIPV grey space -->
+            <div class="outdoor-col">
+              <p class="sec7-subsection-label">Triangular BIPV Buffer Space</p>
+              <p class="outdoor-col-desc">Triangular BIPV units (3-layer: photovoltaic skin / structural frame / integrated service layer) form semi-outdoor grey spaces that mediate between interior comfort and the exposed Arctic landscape — generating energy while creating sheltered transition zones.</p>
+              <div class="outdoor-col-img-wrap" style="height:190px;">
+                <img src="./Picture/section7/三角光伏板.png" alt="Triangular BIPV panel unit" onclick="openLightbox(this)">
+              </div>
+              <p class="outdoor-col-caption">Triangular BIPV unit — 3-layer assembly</p>
+              <div class="outdoor-col-img-wrap" style="height:230px;">
+                <img src="./Picture/section7/轴测图.png" alt="Overall axonometric — BIPV buffer system" onclick="openLightbox(this)">
+              </div>
+              <p class="outdoor-col-caption">Overall axonometric — BIPV buffer system</p>
+            </div>
+
+            <!-- Right: Entrance tent space -->
+            <div class="outdoor-col">
+              <p class="sec7-subsection-label">Tent-like Entrance Buffer</p>
+              <p class="outdoor-col-desc">A tent-like entrance buffer creates a secondary climatic transition zone before the airlock — reducing cold air, snow, and moisture ingress. The folding structure allows rapid deployment and compact storage during transport.</p>
+              <div class="outdoor-col-img-wrap" style="height:135px;">
+                <img src="./Picture/section7/棚折叠1.png" alt="Entrance tent — folding sequence 1" onclick="openLightbox(this)">
+              </div>
+              <p class="outdoor-col-caption">Entrance tent — folding sequence 01</p>
+              <div class="outdoor-col-img-wrap" style="height:135px;">
+                <img src="./Picture/section7/棚折叠2.png" alt="Entrance tent — folding sequence 2" onclick="openLightbox(this)">
+              </div>
+              <p class="outdoor-col-caption">Entrance tent — folding sequence 02</p>
+              <div class="outdoor-col-img-wrap" style="height:135px;">
+                <img src="./Picture/section7/棚折叠3.png" alt="Entrance tent — folding sequence 3" onclick="openLightbox(this)">
+              </div>
+              <p class="outdoor-col-caption">Entrance tent — folding sequence 03</p>
+            </div>
+
+          </div>
+
+          <!-- Full-width sectional perspective -->
+          <p class="sec7-subsection-label">Sectional Perspective</p>
+          <div class="outdoor-section-wrap">
+            <img src="./Picture/section7/剖透视5.png" alt="Sectional perspective — spatial layers" onclick="openLightbox(this)">
+          </div>
+          <p class="outdoor-col-caption" style="padding:6px 4px 0;">Sectional perspective — spatial layers and climatic transitions</p>
+
+        </div>
+
+        <!-- Tab: Spatial Design -->
+        <div class="tab-content" id="sec7-spatial">
+
+          <p class="sec7-subsection-label">Floor Plan Configurations</p>
+          <div class="floorplan-grid">
+
+            <div class="floorplan-card">
+              <div class="floorplan-scale-tag">Basic Configuration</div>
+              <div class="floorplan-img-wrap">
+                <img src="./Picture/section7/平面图1.png" alt="Floor plan — basic configuration" onclick="openLightbox(this)">
+              </div>
+              <div class="floorplan-legend">
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Airlock</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Dining room</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Bathhouse</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Dormitory</div>
+              </div>
+            </div>
+
+            <div class="floorplan-card">
+              <div class="floorplan-scale-tag">Intermediate Configuration</div>
+              <div class="floorplan-img-wrap">
+                <img src="./Picture/section7/平面图2.png" alt="Floor plan — intermediate configuration" onclick="openLightbox(this)">
+              </div>
+              <div class="floorplan-legend">
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Airlock</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Meeting room</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Office</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Dining room</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Bathhouse</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Dormitory</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Laboratory</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Waste disposal &amp; storage</div>
+              </div>
+            </div>
+
+            <div class="floorplan-card">
+              <div class="floorplan-scale-tag">Full Deployment</div>
+              <div class="floorplan-img-wrap">
+                <img src="./Picture/section7/平面图3.png" alt="Floor plan — full deployment" onclick="openLightbox(this)">
+              </div>
+              <div class="floorplan-legend">
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Airlock</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Meeting room</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Office</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Dining room</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Laboratory</div>
+                <div class="floorplan-legend-item"><span class="floorplan-legend-dot"></span>Waste disposal &amp; storage</div>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="sec7-subsection-label" style="margin-top:20px;">Interior Module Configurations</p>
+          <div class="interior-module-grid">
+
+            <div class="interior-module-card">
+              <div class="interior-module-img-wrap">
+                <img src="./Picture/section7/爆炸轴测1.png" alt="Laboratory module interior" onclick="openLightbox(this)">
+              </div>
+              <div class="interior-module-body">
+                <div class="interior-module-title">Laboratory</div>
+                <p class="interior-module-desc">Workstation rows with integrated equipment storage, optimised for precision fieldwork and sample processing within a compact folded volume.</p>
+              </div>
+            </div>
+
+            <div class="interior-module-card">
+              <div class="interior-module-img-wrap">
+                <img src="./Picture/section7/爆炸轴测2.png" alt="Dormitory module interior" onclick="openLightbox(this)">
+              </div>
+              <div class="interior-module-body">
+                <div class="interior-module-title">Dormitory</div>
+                <p class="interior-module-desc">Twin sleeping units with integrated shelving and wardrobe systems; panoramic end windows frame the landscape and maximise natural light.</p>
+              </div>
+            </div>
+
+            <div class="interior-module-card">
+              <div class="interior-module-img-wrap">
+                <img src="./Picture/section7/爆炸轴测3.png" alt="Meeting and office module interior" onclick="openLightbox(this)">
+              </div>
+              <div class="interior-module-body">
+                <div class="interior-module-title">Meeting &amp; Office</div>
+                <p class="interior-module-desc">Flexible workspace combining a central meeting table with individual workstations; fold-plate geometry creates an elevated, focused atmosphere.</p>
+              </div>
+            </div>
+
+            <div class="interior-module-card">
+              <div class="interior-module-img-wrap">
+                <img src="./Picture/section7/爆炸轴测4.png" alt="Dining module interior" onclick="openLightbox(this)">
+              </div>
+              <div class="interior-module-body">
+                <div class="interior-module-title">Dining</div>
+                <p class="interior-module-desc">Communal dining layout with multi-row seating; serves as a social hub connecting research and living zones across the modular settlement.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Tab 3: Perspectives & Discussion -->
+        <div class="tab-content" id="sec7-perspectives">
+
+          <div class="persp-hero-wrap">
+            <img class="persp-hero-img" src="./Picture/section7/渲染户外.png" alt="Exterior perspective — Foldscape Habitat at the Yellow River source" onclick="openLightbox(this)">
+          </div>
+
+          <div class="persp-duo-grid">
+            <div class="persp-trio-card">
+              <div class="persp-trio-img-wrap">
+                <img src="./Picture/section7/室内卧室.png" alt="Interior perspective — dormitory" onclick="openLightbox(this)">
+              </div>
+              <div class="persp-trio-caption">Interior perspective — dormitory</div>
+            </div>
+            <div class="persp-trio-card">
+              <div class="persp-trio-img-wrap">
+                <img src="./Picture/section7/室内实验室.png" alt="Interior perspective — laboratory" onclick="openLightbox(this)">
+              </div>
+              <div class="persp-trio-caption">Interior perspective — laboratory</div>
+            </div>
+          </div>
+
+          <div class="discussion-cols">
+            <div class="fst-col">
+              <div class="fst-col-title">Design Discussion</div>
+              <p style="font-size:11px;line-height:1.7;color:var(--text-secondary);">The folding capacity establishes a direct relationship between geometric transformation and spatial performance, allowing units to remain compact during transport and expand upon deployment. The modular system balances standardisation — which improves fabrication and assembly efficiency — with site specificity, as fragile landscapes demand careful calibration to local topography, wind, snow load, hydrology, and ecological conditions.</p>
+              <p style="font-size:11px;line-height:1.7;color:var(--text-secondary);margin-top:8px;">The triangular BIPV buffer spaces create a transitional layer between protected interior spaces and the exposed landscape, reducing direct environmental impact while generating energy and extending spatial activity scenarios.</p>
+            </div>
+            <div class="fst-col">
+              <div class="fst-col-title">Future Development</div>
+              <p style="font-size:11px;line-height:1.7;color:var(--text-secondary);">Future development could focus on detailed structural analysis, thermal simulation, BIPV performance evaluation, and physical prototyping of critical connection points. The folding mechanisms, envelope assemblies, and inter-module joints all require further testing at both the component and system level.</p>
+              <p style="font-size:11px;line-height:1.7;color:var(--text-secondary);margin-top:8px;">The system could also be tested against a range of site scenarios to understand performance under different climatic, ecological, and logistical conditions — developing from a design proposal into a technically resolved and deployable habitat system for remote and environmentally sensitive contexts.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================== SECTION 8: CONCLUSION (STUB) ======================== -->
+    <section id="sec-8" class="section">
+      <div class="section-inner">
+
+        <div class="section-header">
+          <div class="sec-num">08</div>
+          <div class="sec-title-wrap">
+            <h2>Discussion</h2>
+            <p class="sec-subtitle">Research synthesis · Tensions · Future directions</p>
+          </div>
+        </div>
+
+        <p class="sec8-opening">This project investigates how a deployable architectural system can support scientific fieldwork in ecologically fragile environments while minimising long-term ground disturbance — functioning simultaneously as a spatial design, a construction strategy, an environmental response mechanism, and a framework for temporary or semi-permanent habitation.</p>
+
+        <div class="sec8-model-strip">
+          <div class="sec8-model-card">
+            <div class="sec8-model-img-wrap">
+              <img src="./Picture/section8/model1.jpg" alt="Foldscape habitat — model view 01" onclick="openLightbox(this)">
+            </div>
+            <p class="sec8-model-caption">Model view 01</p>
+          </div>
+          <div class="sec8-model-card">
+            <div class="sec8-model-img-wrap">
+              <img src="./Picture/section8/model2.jpg" alt="Foldscape habitat — model view 02" onclick="openLightbox(this)">
+            </div>
+            <p class="sec8-model-caption">Model view 02</p>
+          </div>
+          <div class="sec8-model-card">
+            <div class="sec8-model-img-wrap">
+              <img src="./Picture/section8/model3.jpg" alt="Foldscape habitat — model view 03" onclick="openLightbox(this)">
+            </div>
+            <p class="sec8-model-caption">Model view 03</p>
+          </div>
+        </div>
+
+        <div class="criteria-grid">
+
+          <div class="criteria-card">
+            <div class="ss-color-bar" style="background:#3AA68B"></div>
+            <div class="criteria-body">
+              <div class="cc-dec-num" style="color:#3AA68B">01</div>
+              <h3 class="cc-title">Foldability as Design Strategy</h3>
+              <p class="cc-body">The folding capacity allows structural units to remain compact during transport and to expand upon deployment, establishing a direct relationship between geometric transformation and spatial performance. At the same time, foldability introduces considerable complexity in thermal insulation, waterproofing, airtightness, and structural stability — it should be treated as a design strategy requiring further development through structural testing, material research, and full-scale prototyping, not as a self-contained solution.</p>
+            </div>
+          </div>
+
+          <div class="criteria-card">
+            <div class="ss-color-bar" style="background:#5B67D4"></div>
+            <div class="criteria-body">
+              <div class="cc-dec-num" style="color:#5B67D4">02</div>
+              <h3 class="cc-title">Modular vs. Site-Specific</h3>
+              <p class="cc-body">Standardised modules improve efficiency in fabrication, transportation, and assembly. Yet fragile landscapes — alpine wetlands, permafrost zones, plateau environments — demand careful calibration to local topography, wind exposure, snow load, hydrology, and ecological conditions. The project therefore proposes a flexible system adjustable to each site's particular circumstances, rather than a generic structure placeable anywhere.</p>
+            </div>
+          </div>
+
+          <div class="criteria-card">
+            <div class="ss-color-bar" style="background:#E85A1A"></div>
+            <div class="criteria-body">
+              <div class="cc-dec-num" style="color:#E85A1A">03</div>
+              <h3 class="cc-title">Exterior Grey Spaces</h3>
+              <p class="cc-body">Triangular BIPV units function not only as energy-generating components, but as spatial and climatic elements — creating canopies, covered walkways, shaded areas, and semi-outdoor buffer zones that form a transitional layer between protected interior spaces and the exposed landscape. Entry tents further reinforce this transition, providing a secondary climatic buffer before the airlock, supporting snow removal, equipment preparation, and informal exchange.</p>
+            </div>
+          </div>
+
+          <div class="criteria-card">
+            <div class="ss-color-bar" style="background:#8B6348"></div>
+            <div class="criteria-body">
+              <div class="cc-dec-num" style="color:#8B6348">04</div>
+              <h3 class="cc-title">Future Development</h3>
+              <p class="cc-body">Future work could focus on detailed structural analysis, thermal simulation, BIPV performance evaluation, and physical prototyping of critical connection points. The folding mechanisms, envelope assemblies, and inter-module joints all require testing at both component and system level. The system could also be evaluated across a range of site scenarios to understand how it performs under different climatic, ecological, and logistical conditions.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="antarctic_research_population_dataset.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/section3.js"></script>
+  <script src="js/sankey.js"></script>
+<!-- Lightbox overlay -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="Close">&#x2715;</button>
+  <img id="lightbox-img" class="lightbox-img" src="" alt="">
+</div>
+
+<script>
+function openLightbox(imgEl) {
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lightbox-img');
+  lbImg.src = imgEl.src;
+  lbImg.alt = imgEl.alt;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+</body>
+</html>

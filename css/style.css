@@ -2497,3 +2497,94 @@ body {
   letter-spacing: 0.04em;
   margin: 0;
 }
+
+/* ============================================================
+   MOBILE RESPONSIVE — max-width: 768px
+   桌面端（>768px）完全不受影响
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* ── Navigation ── */
+  .nav-chapters {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-chapters::-webkit-scrollbar { display: none; }
+  .nav-keys-hint { display: none; }
+  .nav-btn { padding: 4px 7px; }
+
+  /* ── Cover (sec-0) ── */
+  .cover-hero {
+    grid-template-columns: 1fr;
+    padding: 28px 20px 20px;
+    gap: 24px;
+  }
+  .title-en { font-size: 32px; letter-spacing: -0.5px; }
+  .title-cn  { font-size: 18px; letter-spacing: 4px; }
+  .cover-nav-section { padding: 16px 20px 24px; }
+  .cover-nav-grid { grid-template-columns: repeat(4, 1fr); }
+  #qr-widget { display: none; }
+
+  /* ── Section inner ── */
+  .section-inner { padding: 20px 16px 40px; }
+  .section-header { gap: 12px; margin-bottom: 20px; }
+  .sec-num { font-size: 36px; min-width: 52px; }
+  .sec-title-wrap h2 { font-size: 20px; }
+
+  /* ── Section 1: Background ── */
+  .stats-row    { grid-template-columns: 1fr; }
+  .charts-row   { grid-template-columns: 1fr; }
+  .problem-grid { grid-template-columns: 1fr; }
+
+  /* ── Section 2: Theory — concept reveal ── */
+  .concept-inner { flex-direction: column; }
+  .concept-img-side {
+    width: 100%;
+    max-width: 100%;
+  }
+  .concept-inner.revealed .concept-img-side {
+    width: 100%;
+    flex-basis: auto;
+  }
+  .concept-inner.revealed .concept-txt-side {
+    max-width: 100%;
+    max-height: none;
+  }
+
+  /* ── Section 4: Connections ── */
+  .joint-card { grid-template-columns: 1fr; }
+  .joint-img-wrap {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  .combo-matrix-wrap { overflow-x: auto; }
+
+  /* ── Section 5: Spatial ── */
+  .space-systems-grid { grid-template-columns: 1fr; }
+  .space-system-card:last-child:nth-child(odd) {
+    grid-column: auto;
+    max-width: 100%;
+    justify-self: stretch;
+  }
+
+  /* ── Section 6: Site ── */
+  .site-grid         { grid-template-columns: 1fr; }
+  .criteria-grid     { grid-template-columns: 1fr; }
+  .final-site-hero   { grid-template-columns: 1fr; }
+  .final-site-texts  { grid-template-columns: 1fr; }
+
+  /* ── Section 7: Design ── */
+  .criteria-grid--3col  { grid-template-columns: 1fr; }
+  .outdoor-two-col      { grid-template-columns: 1fr; }
+  .persp-duo-grid       { grid-template-columns: 1fr; }
+  .floorplan-grid       { grid-template-columns: 1fr 1fr; }
+  .interior-module-grid { grid-template-columns: 1fr; }
+  .persp-trio-grid      { grid-template-columns: 1fr 1fr; }
+
+  /* ── Section 8: Conclusion ── */
+  .sec8-model-strip { grid-template-columns: 1fr 1fr; }
+  .discussion-cols  { grid-template-columns: 1fr; }
+
+  /* ── General images ── */
+  img { max-width: 100%; height: auto; }
+}

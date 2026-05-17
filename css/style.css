@@ -2454,7 +2454,7 @@ body {
 
 /* Tab 3: perspectives */
 .persp-hero-wrap { height: 340px; border-radius: var(--r-lg); overflow: hidden; background: #F5F6F9; margin-bottom: 14px; display: flex; align-items: center; justify-content: center; }
-.persp-hero-img { max-width: 100%; max-height: 100%; object-fit: contain; cursor: zoom-in; }
+.persp-hero-img { width: 100%; height: 100%; object-fit: cover; cursor: zoom-in; }
 .persp-trio-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
 .persp-trio-card { border-radius: var(--r-lg); overflow: hidden; background: var(--bg-card); border: 1px solid var(--border); }
 .persp-trio-img-wrap { height: 240px; overflow: hidden; background: #F5F6F9; display: flex; align-items: center; justify-content: center; }

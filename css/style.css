@@ -1189,13 +1189,13 @@ body {
   gap: 28px;
 }
 
-/* ---- Clickable image panel ---- */
+/* ---- Image panel ---- */
 .concept-img-side {
   flex: 0 0 auto;
   width: 520px;
   max-width: 88%;
   margin: 0 auto;
-  cursor: pointer;
+  cursor: default;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
@@ -2408,6 +2408,14 @@ body {
   transition: background 0.15s;
 }
 .lightbox-close:hover { background: rgba(255,255,255,0.15); }
+
+#sec-3 .crease-img-wrap img,
+#sec-3 .proto-img-wrap img,
+#sec-3 .concept-img-side img { cursor: zoom-in; }
+
+#sec-4 .joint-img-wrap img,
+#sec-4 .combo-img-wrap img,
+#sec-4 .cm-cell img { cursor: zoom-in; }
 
 /* --- SECTION 7 --- */
 .sec7-intro { font-size: 12px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px; }

@@ -585,10 +585,9 @@
 
           <!-- ── Row 1: Triangulated Folding Concept → text ── -->
           <div class="concept-reveal">
-            <div class="concept-inner" id="ci-1">
-              <div class="concept-img-side" onclick="revealConcept('ci-1')">
+            <div class="concept-inner revealed" id="ci-1">
+              <div class="concept-img-side">
                 <img src="./Picture/section3/三角折叠概念讲述.png" alt="Triangulated Folding Concept" class="concept-img">
-                <span class="concept-hint">Click to explore →</span>
               </div>
               <div class="concept-txt-side">
                 <div class="mech-section-label">Triangulated Folding Concept</div>
@@ -604,10 +603,9 @@
 
           <!-- ── Row 2: Connection Diagram 1 → interactive SVG ── -->
           <div class="concept-reveal">
-            <div class="concept-inner" id="ci-2">
-              <div class="concept-img-side" onclick="revealConcept('ci-2')">
+            <div class="concept-inner revealed" id="ci-2">
+              <div class="concept-img-side">
                 <img src="./Picture/section3/展开连接图1.png" alt="Deployment and Connection Diagram 1" class="concept-img">
-                <span class="concept-hint">Click for interactive demo →</span>
               </div>
               <div class="concept-txt-side concept-txt-svg">
                 <div class="fold-svg-wrap">
@@ -698,10 +696,9 @@
 
           <!-- ── Row 3: Connection Diagram 2 → text ── -->
           <div class="concept-reveal">
-            <div class="concept-inner" id="ci-3">
-              <div class="concept-img-side" onclick="revealConcept('ci-3')">
+            <div class="concept-inner revealed" id="ci-3">
+              <div class="concept-img-side">
                 <img src="./Picture/section3/展开连接图2.png" alt="Deployment and Connection Diagram 2" class="concept-img">
-                <span class="concept-hint">Click to explore →</span>
               </div>
               <div class="concept-txt-side">
                 <div class="mech-section-label">Deployment &amp; Connection · Diagram 2</div>
@@ -716,10 +713,9 @@
 
           <!-- ── Row 4: Exploded View → text ── -->
           <div class="concept-reveal">
-            <div class="concept-inner" id="ci-4">
-              <div class="concept-img-side" onclick="revealConcept('ci-4')">
+            <div class="concept-inner revealed" id="ci-4">
+              <div class="concept-img-side">
                 <img src="./Picture/section3/爆炸图.png" alt="System Integration Exploded View" class="concept-img">
-                <span class="concept-hint">Click to explore →</span>
               </div>
               <div class="concept-txt-side">
                 <div class="mech-section-label">System Integration · Exploded View</div>
@@ -1773,7 +1769,7 @@
 <!-- Lightbox overlay -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" aria-label="Close">&#x2715;</button>
-  <img id="lightbox-img" class="lightbox-img" src="" alt="">
+  <img id="lightbox-img" class="lightbox-img" src="" alt="" onclick="closeLightbox()">
 </div>
 
 <script>
@@ -1784,6 +1780,10 @@ function openLightbox(imgEl) {
   lbImg.alt = imgEl.alt;
   lb.classList.add('active');
   document.body.style.overflow = 'hidden';
+  var isConceptImg = imgEl.classList.contains('concept-img');
+  lbImg.style.backgroundColor = isConceptImg ? '#ffffff' : '';
+  lbImg.style.padding        = isConceptImg ? '20px'    : '';
+  lbImg.style.borderRadius   = isConceptImg ? '8px'     : '';
 }
 function closeLightbox() {
   document.getElementById('lightbox').classList.remove('active');
@@ -1791,6 +1791,12 @@ function closeLightbox() {
 }
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') closeLightbox();
+});
+document.getElementById('sec-3').addEventListener('click', function(e) {
+  if (e.target.tagName === 'IMG') openLightbox(e.target);
+});
+document.getElementById('sec-4').addEventListener('click', function(e) {
+  if (e.target.tagName === 'IMG') openLightbox(e.target);
 });
 </script>
 </body>
